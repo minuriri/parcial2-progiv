@@ -62,8 +62,6 @@ vacunaspty = [
 def home():
     return render_template("home.html")
 
-
-# A route to return all of the available entries in our catalog.
 @app.route('/api/all', methods=['GET'])
 def api_all():
     return jsonify(vacunaspty)
@@ -73,7 +71,7 @@ def api_id():
     if 'id' in request.args:
         id = int(request.args['id'])
     else:
-        return "Error: No id field provided. Please specify an id."
+        return "Error: id no ingresado. Por favpr, especificar un id."
 
     results = []
 
